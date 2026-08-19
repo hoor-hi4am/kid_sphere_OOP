@@ -4,9 +4,11 @@
 #include "Child.h"
 #include <vector>
 
-class Parent : public User{
+class Parent : public User
+{
 private:
     vector<Child*> children;
+
 public:
     Parent(
         const string& id,
@@ -14,7 +16,12 @@ public:
         const string& email,
         const string& password
     );
+
     void addChild(Child* child);
+
     const vector<Child*>& getChildren() const;
+
     void displayProfile() const override;
+
+    void viewChildScreenTime(Child* child) const;
 };

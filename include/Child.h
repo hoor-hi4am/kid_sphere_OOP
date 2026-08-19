@@ -4,6 +4,7 @@
 #include "Reward.h"
 #include "Progress.h"
 #include "Course.h"
+#include "ScreenTime.h"
 
 #include <vector>
 
@@ -14,6 +15,7 @@ class Child : public User
 private:
     Reward reward;
     Progress progress;
+    ScreenTime screenTime;
     vector<Course*> enrolledCourses;
 
 public:
@@ -31,6 +33,8 @@ public:
     Reward& getReward();
 
     Progress& getProgress();
+
+    ScreenTime& getScreenTime();
 
     const vector<Course*>& getEnrolledCourses() const;
 

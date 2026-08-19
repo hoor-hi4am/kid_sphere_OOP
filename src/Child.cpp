@@ -36,6 +36,11 @@ Progress& Child::getProgress()
     return progress;
 }
 
+ScreenTime& Child::getScreenTime()
+{
+    return screenTime;
+}
+
 const vector<Course*>& Child::getEnrolledCourses() const
 {
     return enrolledCourses;

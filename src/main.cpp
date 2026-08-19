@@ -97,6 +97,7 @@ int main()
     system.addCourse(&cppCourse);
 
     parent.addChild(&child);
+    parent.viewChildScreenTime(&child);
 
     child.enrollCourse(&cppCourse);
     child.earnCoins(50);
@@ -139,6 +140,31 @@ int main()
     cout << "=========================\n";
 
     cppCourse.displayCourseInfo();
+
+    cout << "\n===== Screen Time =====" << endl;
+
+    cout << "Daily Limit: "
+         << child.getScreenTime().getDailyLimit()
+         << " minutes" << endl;
+
+    child.getScreenTime().addUsage(30);
+
+    cout << "Used Today: "
+         << child.getScreenTime().getMinutesUsed()
+         << " minutes" << endl;
+
+    cout << "Remaining: "
+         << child.getScreenTime().getRemainingMinutes()
+         << " minutes" << endl;
+
+    if (child.getScreenTime().isLimitExceeded())
+    {
+        cout << "Screen Time Limit Exceeded!" << endl;
+    }
+    else
+    {
+        cout << "Screen Time Limit Not Exceeded." << endl;
+    }
 
     return 0;
 }

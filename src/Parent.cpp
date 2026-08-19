@@ -37,3 +37,36 @@ void Parent::displayProfile() const
     }
 
 }
+
+void Parent::viewChildScreenTime(Child* child) const
+{
+    if (child == nullptr)
+    {
+        cout << "Invalid child." << endl;
+        return;
+    }
+
+    cout << "\n===== Child Screen Time =====" << endl;
+    cout << "Child: " << child->getName() << endl;
+
+    cout << "Daily Limit: "
+         << child->getScreenTime().getDailyLimit()
+         << " minutes" << endl;
+
+    cout << "Used Today: "
+         << child->getScreenTime().getMinutesUsed()
+         << " minutes" << endl;
+
+    cout << "Remaining: "
+         << child->getScreenTime().getRemainingMinutes()
+         << " minutes" << endl;
+
+    if (child->getScreenTime().isLimitExceeded())
+    {
+        cout << "Status: Limit Exceeded!" << endl;
+    }
+    else
+    {
+        cout << "Status: Within Limit" << endl;
+    }
+}
