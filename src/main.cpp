@@ -8,6 +8,7 @@
 #include "../include/Lesson.h"
 #include "../include/Quiz.h"
 #include "../include/Question.h"
+#include "../include/Notification.h"
 
 using namespace std;
 
@@ -100,6 +101,19 @@ int main()
     child.enrollCourse(&cppCourse);
     child.earnCoins(50);
 
+    Notification notification1(
+        "N001",
+        "New C++ course is available",
+        "Course");
+
+    Notification notification2(
+        "N002",
+        "You earned 50 coins!",
+        "Reward");
+
+    child.addNotification(notification1);
+    child.addNotification(notification2);
+
     system.displaySystemInfo();
 
     cout << "\n=========================\n";
@@ -113,6 +127,12 @@ int main()
     cout << "=========================\n";
 
     child.displayProfile();
+
+    cout << "\n=========================\n";
+    cout << "Child Notifications\n";
+    cout << "=========================\n";
+
+    child.displayNotifications();
 
     cout << "\n=========================\n";
     cout << "Course Information\n";

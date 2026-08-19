@@ -1,5 +1,6 @@
 #include "../include/User.h"
 #include <iostream>
+
 using namespace std;
 
 User::User(string id, string name, string email, string password)
@@ -47,6 +48,34 @@ void User::setEmail(string email)
 void User::setPassword(string password)
 {
     this->password = password;
+}
+
+void User::addNotification(Notification notification)
+{
+    notifications.push_back(notification);
+}
+
+void User::markNotificationAsRead(string notificationId)
+{
+    for (Notification& notification : notifications)
+    {
+        if (notification.getId() == notificationId)
+        {
+            notification.markAsRead();
+            return;
+        }
+    }
+}
+
+void User::displayNotifications() const
+{
+    cout << "===== Notifications =====" << endl;
+
+    for (const Notification& notification : notifications)
+    {
+        notification.display();
+        cout << endl;
+    }
 }
 
 void User::displayProfile() const

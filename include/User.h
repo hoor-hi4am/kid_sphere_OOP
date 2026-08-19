@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include "Notification.h"
 
 using namespace std;
 
@@ -11,6 +13,9 @@ protected:
     string name;
     string email;
     string password;
+
+private:
+    vector<Notification> notifications;
 
 public:
     User(string id, string name, string email, string password);
@@ -25,6 +30,10 @@ public:
     void setName(string name);
     void setEmail(string email);
     void setPassword(string password);
+
+    void addNotification(Notification notification);
+    void displayNotifications() const;
+    void markNotificationAsRead(string notificationId);
 
     virtual void displayProfile() const;
 };
