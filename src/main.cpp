@@ -86,6 +86,7 @@ int main()
 
     lesson2.setQuiz(&quiz);
 
+    cppCourse.addQuiz(&quiz);
     cppCourse.addLesson(&lesson1);
     cppCourse.addLesson(&lesson2);
 

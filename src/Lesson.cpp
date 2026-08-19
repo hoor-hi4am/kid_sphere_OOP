@@ -14,7 +14,8 @@ Lesson::Lesson(
       title(title),
       description(description),
       duration(duration),
-      quiz(nullptr)
+      quiz(nullptr),
+      course(nullptr)
 {
 }
 
@@ -46,6 +47,16 @@ Quiz *Lesson::getQuiz() const
 void Lesson::setQuiz(Quiz *quiz)
 {
     this->quiz = quiz;
+}
+
+void Lesson::setCourse(Course* course)
+{
+    this->course = course;
+}
+
+Course* Lesson::getCourse() const
+{
+    return course;
 }
 
 void Lesson::displayLessonInfo() const

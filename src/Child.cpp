@@ -72,8 +72,13 @@ bool Child::solveLessonQuiz(Lesson* lesson)
 
     if (score >= quiz->getPassingScore())
     {
-        cout << "\nYou earned 100 coins!" << endl;
+        cout << "\nYou completed this lesson!" << endl;
+
+        progress.completeLesson(lesson);
+
+        cout << "You earned 100 coins!" << endl;
         earnCoins(100);
+
         return true;
     }
 

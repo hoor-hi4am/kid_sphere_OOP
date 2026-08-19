@@ -75,9 +75,10 @@ const vector<Quiz *> &Course::getQuizzes() const
     return quizzes;
 }
 
-void Course::addLesson(Lesson *lesson)
+void Course::addLesson(Lesson* lesson)
 {
     lessons.push_back(lesson);
+    lesson->setCourse(this);
 }
 
 void Course::addQuiz(Quiz *quiz)

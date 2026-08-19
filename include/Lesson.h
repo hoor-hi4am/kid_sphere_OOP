@@ -5,6 +5,7 @@
 using namespace std;
 
 class Quiz;
+class Course;
 
 class Lesson
 {
@@ -14,16 +15,16 @@ private:
     string description;
     int duration;
 
-    Quiz* quiz;
+    Quiz *quiz;
+    Course *course;
 
 public:
     // Constructor
     Lesson(
         string id,
-        const string& title,
-        const string& description,
-        int duration
-    );
+        const string &title,
+        const string &description,
+        int duration);
 
     // Getters
     string getId() const;
@@ -34,10 +35,13 @@ public:
 
     int getDuration() const;
 
-    Quiz* getQuiz() const;
+    Quiz *getQuiz() const;
+    Course *getCourse() const;
 
     // Functions
-    void setQuiz(Quiz* quiz);
+    void setQuiz(Quiz *quiz);
+    void setCourse(Course *course);
+    
 
     // Display
     void displayLessonInfo() const;
