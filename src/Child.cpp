@@ -41,6 +41,11 @@ ScreenTime& Child::getScreenTime()
     return screenTime;
 }
 
+HealthTracker& Child::getHealthTracker()
+{
+    return healthTracker;
+}
+
 const vector<Course*>& Child::getEnrolledCourses() const
 {
     return enrolledCourses;

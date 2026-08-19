@@ -1,4 +1,7 @@
-#include "../include/Progress.h"
+#include "Progress.h"
+#include <iostream>
+
+using namespace std;
 
 Progress::Progress()
 {
@@ -54,4 +57,13 @@ const vector<Lesson*>& Progress::getCompletedLessons() const
 const vector<Course*>& Progress::getCompletedCourses() const
 {
     return completedCourses;
+}
+
+void Progress::displayProgress() const
+{
+    cout << "Completed Lessons: "
+         << completedLessons.size() << endl;
+
+    cout << "Completed Courses: "
+         << completedCourses.size() << endl;
 }

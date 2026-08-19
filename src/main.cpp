@@ -9,6 +9,7 @@
 #include "../include/Quiz.h"
 #include "../include/Question.h"
 #include "../include/Notification.h"
+#include "../include/HealthEntry.h"
 
 using namespace std;
 
@@ -165,6 +166,19 @@ int main()
     {
         cout << "Screen Time Limit Not Exceeded." << endl;
     }
+
+    cout << "\n=========================\n";
+    cout << "Child Health Tracking\n";
+    cout << "=========================\n";
+
+    HealthEntry healthEntry(
+        8.0,
+        6,
+        30);
+
+    child.getHealthTracker().addDailyEntry(healthEntry);
+
+    child.getHealthTracker().getWeeklySummary();
 
     return 0;
 }

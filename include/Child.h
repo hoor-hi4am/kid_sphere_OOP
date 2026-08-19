@@ -5,6 +5,7 @@
 #include "Progress.h"
 #include "Course.h"
 #include "ScreenTime.h"
+#include "HealthTracker.h"
 
 #include <vector>
 
@@ -16,6 +17,7 @@ private:
     Reward reward;
     Progress progress;
     ScreenTime screenTime;
+    HealthTracker healthTracker;
     vector<Course*> enrolledCourses;
 
 public:
@@ -35,6 +37,8 @@ public:
     Progress& getProgress();
 
     ScreenTime& getScreenTime();
+
+    HealthTracker& getHealthTracker();
 
     const vector<Course*>& getEnrolledCourses() const;
 

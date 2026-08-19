@@ -24,4 +24,6 @@ public:
 
     const vector<Lesson*>& getCompletedLessons() const;
     const vector<Course*>& getCompletedCourses() const;
+
+    void displayProgress() const;
 };

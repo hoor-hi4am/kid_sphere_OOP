@@ -24,4 +24,10 @@ public:
     void displayProfile() const override;
 
     void viewChildScreenTime(Child* child) const;
+
+    void viewChildHealth(Child* child) const;
+
+    void viewChildProgress(Child* child) const;
+
+    void viewChildReport(Child* child) const;
 };

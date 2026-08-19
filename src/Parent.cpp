@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Parent.h"
+#include "Report.h"
 
 using namespace std;
 
@@ -13,12 +14,12 @@ Parent::Parent(
 {
 }
 
-void Parent::addChild(Child *child)
+void Parent::addChild(Child* child)
 {
     children.push_back(child);
 }
 
-const vector<Child *> &Parent::getChildren() const
+const vector<Child*>& Parent::getChildren() const
 {
     return children;
 }
@@ -31,11 +32,11 @@ void Parent::displayProfile() const
     cout << "Email: " << getEmail() << endl;
 
     cout << "\nChildren: " << children.size() << endl;
-    for(Child* child : children)
+
+    for (Child* child : children)
     {
         cout << "- " << child->getName() << endl;
     }
-
 }
 
 void Parent::viewChildScreenTime(Child* child) const
@@ -69,4 +70,46 @@ void Parent::viewChildScreenTime(Child* child) const
     {
         cout << "Status: Within Limit" << endl;
     }
+}
+
+void Parent::viewChildHealth(Child* child) const
+{
+    if (child == nullptr)
+    {
+        cout << "Invalid child." << endl;
+        return;
+    }
+
+    cout << "\n===== Child Health =====" << endl;
+    cout << "Child: " << child->getName() << endl;
+
+    child->getHealthTracker().getWeeklySummary();
+}
+
+void Parent::viewChildProgress(Child* child) const
+{
+    if (child == nullptr)
+    {
+        cout << "Invalid child." << endl;
+        return;
+    }
+
+    cout << "\n===== Child Progress =====" << endl;
+    cout << "Child: " << child->getName() << endl;
+
+    child->getProgress().displayProgress();
+}
+
+void Parent::viewChildReport(Child* child) const
+{
+    if (child == nullptr)
+    {
+        cout << "Invalid child." << endl;
+        return;
+    }
+
+    Report report(child, "Weekly Report");
+
+    report.generate();
+    report.display();
 }
